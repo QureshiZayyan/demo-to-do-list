@@ -1,5 +1,9 @@
 @media(max-width:600px) {
 
+    body{
+        background-color: white;
+    }
+    
     .main {
         display: flex;
         flex-direction: column;
