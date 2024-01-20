@@ -1,0 +1,23 @@
+@media(max-width:600px) {
+
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .list {
+        width: 50%;
+    }
+
+    .btn {
+        margin: 15px 0;
+    }
+
+    li span {
+        left: 71vw;
+        position: fixed;
+       
+    }
+}
+
+/* @media () */
