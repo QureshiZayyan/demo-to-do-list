@@ -22,6 +22,10 @@ body {
     background-color: rgb(250, 246, 246);
 }
 
+.list:focus {
+    outline: none;
+}
+
 .btn {
     padding: 7px;
     font-weight: bold;
@@ -42,34 +46,31 @@ body {
     bottom: 40px;
 }
 
-/* .listvalue {} */
-
-ul {
-    width: 50%;
-    margin: auto;
-}
-
 ul li {
+    width: 50%;
     list-style: none;
     border: 2px solid black;
     background-color: whitesmoke;
-    padding: 5px 0 5px 10px;
+    padding: 4px 0 3px 7.5px;
     margin-bottom: 14px;
     font-weight: bolder;
     border-radius: 5px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    overflow-y: scroll;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 100px;
 }
 
 li span {
-    background-color: transparent;
     border-radius: 3px;
-    /* font-weight: bolder; */
     color: red;
-    position: fixed;
-    left: 72.5vw;
+    position: absolute;
+    right: 21vw;
+    padding: 0 4px;
     cursor: pointer;
-
+    background-color: white;
 }
 
 .list {

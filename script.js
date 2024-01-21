@@ -3,8 +3,6 @@ let mylist = document.querySelector('.mylist');
 let btn = document.querySelector('.btn');
 let listvalue = document.querySelector('.listvalue');
 let ul = document.createElement('ul');
-// let span = document.createElement('span');
-
 listvalue.appendChild(ul);
 
 btn.addEventListener('click', () => {

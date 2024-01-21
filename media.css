@@ -1,27 +1,31 @@
-@media(max-width:600px) {
+@media (max-width:805px) {
+    li span {
 
-    body{
-        background-color: white;
+        right: 19.5vw;
     }
-    
+}
+
+@media(max-width:570px) {
+
     .main {
         display: flex;
         flex-direction: column;
     }
 
-    .list {
-        width: 50%;
-    }
-
     .btn {
-        margin: 15px 0;
+        margin: 15px 0 5px 0;
     }
 
     li span {
-        left: 71vw;
-        position: fixed;
-       
+
+        right: 17.5vw;
     }
 }
 
-/* @media () */
+@media(max-width:420px) {
+
+    li span {
+
+        right: 15.5vw;
+    }
+}
