@@ -54,3 +54,5 @@ list.addEventListener('keyup', (e) => {
               })
        }
 })
+
+console.log('welcome to mytodo');
