@@ -55,4 +55,8 @@ list.addEventListener('keyup', (e) => {
        }
 })
 
-console.log('welcome to mytodo');
+<<<<<<< HEAD
+=======
+
+console.log('my to do');
+>>>>>>> 043514544864bef12c4edd4dd8ce71e39cf3fbca
