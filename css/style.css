@@ -1,11 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@500&display=swap");
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-
 body {
-    background-color: rgb(100, 91, 91);
+    background-color: rgb(232, 229, 229);
     font-family: 'Poppins', sans-serif;
 }
 
@@ -13,10 +15,14 @@ body {
     padding: 25px 20px;
 }
 
+form {
+    display: flex;
+    align-items: center;
+}
+
 .list {
     padding: 7px;
-    width: 30%;
-    width: 50%;
+    width: 40vw;
     border-radius: 5px;
     border: 2px solid black;
     background-color: rgb(250, 246, 246);
@@ -27,14 +33,15 @@ body {
 }
 
 .btn {
-    padding: 7px;
+    padding: 8.8px 0px;
     font-weight: bold;
     border-radius: 5px;
     margin-left: 10px;
-    background-color: rgb(40, 36, 36);
+    background-color: rgb(28, 28, 137);
     color: white;
     cursor: pointer;
     border: none;
+    width: 70px;
 }
 
 .main {
@@ -47,7 +54,7 @@ body {
 }
 
 ul li {
-    width: 50%;
+    width: 40%;
     list-style: none;
     border: 2px solid black;
     background-color: whitesmoke;
@@ -65,9 +72,9 @@ ul li {
 
 li span {
     border-radius: 3px;
-    color: red;
+    color: rgb(28, 28, 137);
     position: absolute;
-    right: 21vw;
+    right: 26vw;
     padding: 0 4px;
     cursor: pointer;
     background-color: white;
