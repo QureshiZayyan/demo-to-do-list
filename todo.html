@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="form">
+        <input type="text" id="input">
+        <button id="btn">add</button>
+    </form>
+    <p>local storage</p>
+
+    <script>
+
+        let Collection = JSON.parse(localStorage.getItem('todos')) || [];
+
+        document.getElementById('form').addEventListener('click', (e) => e.preventDefault())
+        let btn = document.getElementById('btn');
+        let input = document.getElementById('input');
+
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log(Collection); // Logs saved todos from localStorage
+            // localStorage.removeItem('todos')
+
+            Collection.forEach(element => {
+                let p = document.createElement('p');
+                p.textContent = element;
+                document.body.append(p);
+            });
+        });
+
+        btn.addEventListener('click', () => {
+            if (input.value == '') return;
+            Collection.push(input.value);
+            input.value = '';
+            localStorage.setItem('todos', JSON.stringify(Collection));
+            console.log(Collection);
+        });
+
+
+    </script>
+</body>
+
+
+</html>
