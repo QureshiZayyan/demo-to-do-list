@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -12,8 +17,11 @@
         <input type="text" id="input">
         <button id="btn">add</button>
     </form>
-    <p>local storage</p>
+    <h1>local storage</h1>
 
+    <h3>your save todo</h3>
+
+    <div id="list-container"></div>
     <script>
 
         let Collection = JSON.parse(localStorage.getItem('todos')) || [];
@@ -21,27 +29,32 @@
         document.getElementById('form').addEventListener('click', (e) => e.preventDefault())
         let btn = document.getElementById('btn');
         let input = document.getElementById('input');
+        let ListContainer = document.getElementById('list-container');
 
-        window.addEventListener('DOMContentLoaded', () => {
-            console.log(Collection); // Logs saved todos from localStorage
-            // localStorage.removeItem('todos')
-
-            Collection.forEach(element => {
+        const FillData = (response) => {
+            ListContainer.innerHTML = '';
+            response.forEach((data) => {
                 let p = document.createElement('p');
-                p.textContent = element;
-                document.body.append(p);
-            });
-        });
+                p.textContent = data;
+                ListContainer.append(p);
+            })
+        }
 
-        btn.addEventListener('click', () => {
-            if (input.value == '') return;
+        document.getElementById('btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            if (input.value === '') return;
             Collection.push(input.value);
-            input.value = '';
             localStorage.setItem('todos', JSON.stringify(Collection));
+            FillData(Collection);
+            input.value = '';
             console.log(Collection);
         });
 
-
+        window.addEventListener('DOMContentLoaded', () => {
+            // localStorage.clear()
+            console.log(Collection);
+            FillData(Collection);
+        });
     </script>
 </body>
 
