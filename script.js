@@ -4,37 +4,50 @@ let btn = document.querySelector('.btn');
 let listvalue = document.querySelector('.listvalue');
 let ul = document.createElement('ul');
 listvalue.appendChild(ul);
+let storedList = JSON.parse(localStorage.getItem('list')) || [];
+
+const FillData = (response) => {
+       ul.innerHTML = '';
+       response.forEach((data) => {
+              let li = document.createElement('li');
+              ul.append(li);
+              li.classList.add('notes');
+              li.textContent = data;
+
+              let span = document.createElement('span');
+              span.classList.add('delete');
+              span.textContent = 'X';
+              li.appendChild(span);
+
+              span.addEventListener('click', (e) => {
+                     if (e.target.classList.contains('delete')) {
+                            const itemIndex = Array.from(e.target.parentElement.parentNode.children).indexOf(e.target.parentElement);
+                            console.log(itemIndex);
+
+                            // localStorage.removeItem('list');
+                            e.target.parentElement.remove();
+                     }
+              });
+       })
+}
 
 btn.addEventListener('click', (e) => {
        e.preventDefault();
-
        if (list.value === '') {
               alert('error');
        }
 
        if (list.value !== '') {
-              let li = document.createElement('li');
-              ul.append(li);
-              li.classList.add('notes');
-              li.innerHTML = list.value;
-              let span = document.createElement('span');
-              span.classList.add('delete');
-              span.innerHTML = 'X';
-
-              li.appendChild(span);
-
-              let storedList = JSON.parse(localStorage.getItem('list')) || []; // Check if there's already a list in storage, otherwise start with an empty list
-              storedList.push(list.value); // Add the new item to the stored list
-              localStorage.setItem('list', JSON.stringify(storedList));
+              storedList.push(list.value);
               list.value = '';
-
-              span.addEventListener('click', (e) => {
-                     if (e.target.classList.contains('delete')) {
-                            e.target.parentElement.remove();
-                     }
-              });
-
-
+              localStorage.setItem('list', JSON.stringify(storedList));
+              FillData(storedList);
        };
-
 });
+
+window.addEventListener('DOMContentLoaded', () => {
+       // localStorage.clear();
+       FillData(storedList);
+       console.log('the list content are =>', storedList);
+
+})

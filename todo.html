@@ -17,6 +17,7 @@
         <input type="text" id="input">
         <button id="btn">add</button>
     </form>
+
     <h1>local storage</h1>
 
     <h3>your save todo</h3>
@@ -26,7 +27,7 @@
 
         let Collection = JSON.parse(localStorage.getItem('todos')) || [];
 
-        document.getElementById('form').addEventListener('click', (e) => e.preventDefault())
+        // document.getElementById('form').addEventListener('click', (e) => e.preventDefault())
         let btn = document.getElementById('btn');
         let input = document.getElementById('input');
         let ListContainer = document.getElementById('list-container');
