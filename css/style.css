@@ -84,3 +84,12 @@ li span {
 .list {
     font-weight: bolder;
 }
+
+#RemoveAllList {
+    padding: 4px;
+    font-weight: 600;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
