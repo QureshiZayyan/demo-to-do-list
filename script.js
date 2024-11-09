@@ -5,9 +5,13 @@ let listvalue = document.querySelector('.listvalue');
 let ul = document.createElement('ul');
 listvalue.appendChild(ul);
 let storedList = JSON.parse(localStorage.getItem('list')) || [];
+// let storedList = storedList.reverse();
+
+console.log(storedList);
 
 const FillData = (response) => {
        ul.innerHTML = '';
+       storedList = storedList.reverse();
        response.forEach((data) => {
               let li = document.createElement('li');
               ul.append(li);
@@ -38,9 +42,11 @@ btn.addEventListener('click', (e) => {
        }
 
        if (list.value !== '') {
+
               storedList.push(list.value);
               list.value = '';
               localStorage.setItem('list', JSON.stringify(storedList));
+
               FillData(storedList);
        };
 });
